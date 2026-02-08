@@ -97,7 +97,7 @@ function MiniTerminal() {
         <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#28c840", display: "inline-block" }} />
       </div>
       {lines.map((l, i) => <div key={i} style={{ color: l.c, animation: "rFadeIn 0.25s forwards", opacity: 0 }}>{l.t}</div>)}
-      {started && lines.length < scan.length && <span style={{ color: "#00ffcc", animation: "rBlink 1s infinite" }}>▊</span>}
+      {started && lines.length < SCAN_STEPS.length && <span style={{ color: "#00ffcc", animation: "rBlink 1s infinite" }}>▊</span>}
       <div style={{ position: "absolute", inset: 0, background: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,204,0.015) 2px, rgba(0,255,204,0.015) 4px)", pointerEvents: "none" }} />
     </div>
   );
