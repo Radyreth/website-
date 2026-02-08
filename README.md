@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# REAZY — Cybersecurity & Web Development Landing Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Project Status](https://img.shields.io/badge/Status-Live-00ffcc?style=flat-square)
+![Tech Stack](https://img.shields.io/badge/Stack-React%20%7C%20JavaScript%20%7C%20CSS-blue?style=flat-square)
 
-## Available Scripts
+Une landing page interactive, futuriste et hautement performante conçue pour un profil de freelance spécialisé en **Cybersécurité** et **Développement Web**. Ce projet met l'accent sur l'expérience utilisateur (UX) via des animations micro-interactives et un design minimaliste "Premium Dark".
 
-In the project directory, you can run:
+## 🚀 Fonctionnalités Clés
 
-### `npm start`
+- **Animations avancées** : Effets de glitch, texte "scramble" interactif, et composants magnétiques.
+- **Micro-Terminal Interactif** : Une simulation de scan de sécurité intégrée pour renforcer l'image d'expert.
+- **Architecture Moderne** : Développé avec **React 19**, utilisant les Hooks (useState, useEffect, useRef) pour une logique fluide.
+- **Design Atomic** : Stylisation 100% inline pour une portabilité maximale et une cohérence visuelle parfaite.
+- **SEO & Performance** : Optimisé pour un chargement rapide et une bonne visibilité sur les moteurs de recherche.
+- **Intégration Business** : Formulaire de contact lié via EmailJS, redirection vers Fiverr et Calendly.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Stack Technique
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend** : [React.js](https://reactjs.org/)
+- **Animations** : Custom CSS Keyframes & Framer-like logic (Vanilla JS)
+- **Formulaire** : [EmailJS](https://www.emailjs.com/)
+- **Déploiement** : [Vercel](https://vercel.com/)
 
-### `npm test`
+## 📸 Aperçu
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> Le site est accessible en direct ici : **[website-fziz.vercel.app](https://website-fziz.vercel.app)**
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 💻 Installation Locale
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clonez le dépôt :
+   ```bash
+   git clone https://github.com/Radyreth/website-.git
+   ```
+2. Installez les dépendances :
+   ```bash
+   npm install
+   ```
+3. Lancez le serveur de développement :
+   ```bash
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+*Projet développé par [Radyreth](https://github.com/Radyreth)*
