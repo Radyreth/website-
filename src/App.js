@@ -70,23 +70,25 @@ function Reveal({ children, delay = 0, direction = "up" }) {
   return <div ref={ref} style={{ opacity: vis ? 1 : 0, transform: vis ? "translate(0,0)" : (t[direction] || t.up), transition: `all 0.8s cubic-bezier(0.16,1,0.3,1) ${delay}ms` }}>{children}</div>;
 }
 
+const SCAN_STEPS = [
+  { t: "$ reazy --scan target.com", c: "#00ffcc" },
+  { t: "[■■■■■■■■■■] scanning...", c: "#3a3a5a" },
+  { t: "✓ SSL valid", c: "#00ff88" },
+  { t: "✗ CSP missing", c: "#ff3366" },
+  { t: "✗ jQuery 2.1.4 — 3 CVEs", c: "#ff3366" },
+  { t: "⚠ X-Frame-Options absent", c: "#ffcc00" },
+  { t: "✓ HSTS enabled", c: "#00ff88" },
+  { t: "─────────────────────", c: "#1a1a2e" },
+  { t: "72/100 — 2 crit · 1 warn", c: "#fff" },
+];
+
 function MiniTerminal() {
   const [lines, setLines] = useState([]);
   const [started, setStarted] = useState(false);
   const ref = useRef(null);
-  const scan = [
-    { t: "$ reazy --scan target.com", c: "#00ffcc" },
-    { t: "[■■■■■■■■■■] scanning...", c: "#3a3a5a" },
-    { t: "✓ SSL valid", c: "#00ff88" },
-    { t: "✗ CSP missing", c: "#ff3366" },
-    { t: "✗ jQuery 2.1.4 — 3 CVEs", c: "#ff3366" },
-    { t: "⚠ X-Frame-Options absent", c: "#ffcc00" },
-    { t: "✓ HSTS enabled", c: "#00ff88" },
-    { t: "─────────────────────", c: "#1a1a2e" },
-    { t: "72/100 — 2 crit · 1 warn", c: "#fff" },
-  ];
+
   useEffect(() => { const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting && !started) setStarted(true); }, { threshold: 0.4 }); if (ref.current) obs.observe(ref.current); return () => obs.disconnect(); }, [started]);
-  useEffect(() => { if (!started) return; let i = 0; const iv = setInterval(() => { if (i < scan.length) { setLines(p => [...p, scan[i]]); i++; } else clearInterval(iv); }, 350); return () => clearInterval(iv); }, [started]);
+  useEffect(() => { if (!started) return; let i = 0; const iv = setInterval(() => { if (i < SCAN_STEPS.length) { setLines(p => [...p, SCAN_STEPS[i]]); i++; } else clearInterval(iv); }, 350); return () => clearInterval(iv); }, [started]);
   return (
     <div ref={ref} style={{ background: "#08081a", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 8, padding: "16px 20px", fontFamily: "'Courier New', monospace", fontSize: 12, lineHeight: 1.9, minHeight: 240, position: "relative", overflow: "hidden" }}>
       <div style={{ display: "flex", gap: 5, marginBottom: 14 }}>
@@ -164,8 +166,10 @@ function ContactForm() {
     try {
       const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ service_id: EMAILJS_SERVICE_ID, template_id: EMAILJS_TEMPLATE_ID, user_id: EMAILJS_PUBLIC_KEY,
-          template_params: { from_name: form.name, from_email: form.email, service: form.service || "Not specified", message: form.msg } }),
+        body: JSON.stringify({
+          service_id: EMAILJS_SERVICE_ID, template_id: EMAILJS_TEMPLATE_ID, user_id: EMAILJS_PUBLIC_KEY,
+          template_params: { from_name: form.name, from_email: form.email, service: form.service || "Not specified", message: form.msg }
+        }),
       });
       if (res.ok || res.status === 200) { setStatus("sent"); setForm({ name: "", email: "", service: "", msg: "" }); }
       else throw new Error("Failed");
