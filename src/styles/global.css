@@ -1,0 +1,203 @@
+@import './variables.css';
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  overflow-x: hidden;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 255, 204, 0.2);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: rgba(0, 255, 204, 0.2);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 204, 0.15);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 204, 0.3);
+}
+
+/* Focus visible */
+*:focus-visible {
+  outline: 1px dashed var(--cyan);
+  outline-offset: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  padding: 8px 16px;
+  background: var(--cyan);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  z-index: 10000;
+  border-radius: 0 0 4px 4px;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-6px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes scrollPulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 0.1; }
+  100% { opacity: 0.4; }
+}
+
+@keyframes scanLine {
+  0% { transform: scaleX(0); transform-origin: left; }
+  50% { transform: scaleX(1); transform-origin: left; }
+  50.1% { transform: scaleX(1); transform-origin: right; }
+  100% { transform: scaleX(0); transform-origin: right; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 204, 0.1); }
+  50% { box-shadow: 0 0 30px rgba(0, 255, 204, 0.25); }
+}
+
+/* Section parallax background numbers */
+.section-number {
+  position: absolute;
+  font-size: clamp(80px, 15vw, 200px);
+  font-weight: 900;
+  color: rgba(0, 255, 204, 0.02);
+  font-family: system-ui, sans-serif;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  z-index: 0;
+}
+
+/* Section entry scanner line */
+.section-scanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+/* CTA button glow hover */
+.cta-glow {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-glow:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.2), 0 0 40px rgba(0, 255, 204, 0.1);
+}
+
+/* Fiverr button gradient sweep */
+.fiverr-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fiverr-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fiverr-btn:hover::before {
+  left: 100%;
+}
+
+.fiverr-btn:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Noise overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 998;
+  opacity: 0.4;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Base responsive */
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+}

@@ -1,0 +1,23 @@
+:root {
+  --bg: #0a0c10;
+  --bg-card: #13161d;
+  --text: #f0f2f5;
+  --cyan: #2563eb; /* Precision Blue */
+  --pink: #3b82f6; /* Secondary Blue */
+  --blue: #1d4ed8; /* Deep Blue */
+  --dim: rgba(240,242,245,0.6);
+  --muted: rgba(240,242,245,0.3);
+  --ghost: rgba(240,242,245,0.1);
+  --border: rgba(255,255,255,0.08);
+  --cyan-dim: rgba(37,99,235,0.3);
+  --cyan-ghost: rgba(37,99,235,0.1);
+
+  --font-mono: 'Courier New', Courier, monospace;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  --bp-mobile: 768px;
+  --bp-tablet: 1024px;
+}
