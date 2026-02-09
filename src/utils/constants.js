@@ -32,7 +32,7 @@ export const BP = {
 
 // Services data
 export const SERVICES = [
-  { n: "01", title: "Security Audit", sub: "Break your app before hackers do", price: "$99", delivery: "2-3 days" },
+  { n: "01", title: "Security Audit", sub: "Break your app before hackers do", price: "$100", delivery: "2-3 days" },
   { n: "02", title: "Web Dev", sub: "Ship fast. Ship secure.", price: "$200", delivery: "7-14 days" },
   { n: "03", title: "UX Review", sub: "Find what kills conversions", price: "$49", delivery: "1-2 days" },
   { n: "04", title: "Full Package", sub: "Audit + Fix + Review", price: "$299", delivery: "10-14 days" },
@@ -115,7 +115,7 @@ export const TERMINAL_COMMANDS = {
     "┌──────────────────┬────────┬──────────┐",
     "│ Service          │ Price  │ Delivery │",
     "├──────────────────┼────────┼──────────┤",
-    "│ Security Audit   │   $99  │  2-3 d   │",
+    "│ Security Audit   │   $100 │  2-3 d   │",
     "│ Web Development  │  $200  │  7-14 d  │",
     "│ UX/UI Review     │   $49  │  1-2 d   │",
     "│ Full Package     │  $299  │ 10-14 d  │",
