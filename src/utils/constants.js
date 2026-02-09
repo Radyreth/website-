@@ -90,7 +90,7 @@ export const TERMINAL_COMMANDS = {
   ],
   about: [
     "┌─────────────────────────────────┐",
-    "│ REAZY — Cybersec & Web Dev      │",
+    "│ THÉO AMMOUR — Cybersec & Dev    │",
     "│ Based in Paris, FR              │",
     "│ I break things, then rebuild    │",
     "│ them stronger.                  │",
